@@ -1,0 +1,118 @@
+:root {
+			
+	--bg-color: rgb(32, 36, 33);
+	
+	--text-color: rgb(192, 192, 192);
+	--text-size: 18px;
+	--text-size-small: 14px;
+	
+	--link-color: rgb(52, 152, 219);
+	
+	--underline-color: rgb(89, 126, 97);
+	
+	--border-color: rgb(89, 126, 97);
+	--border-size: 5px;
+	
+	--spacing: 20px;
+	--spacing-small: 5px;
+	
+	--div-width: 60vw;
+	
+}
+body {
+	display: grid;
+	place-items: center;
+	font-family: Comfortaa, sans-serif;
+	background-color: var(--bg-color);
+}
+h1, h2, h3, h4, h5, h6 {
+	color: var(--text-color);
+}
+p {
+	color: var(--text-color);
+	font-size: var(--text-size);
+	line-height: 1.5;
+}
+a, a:hover, a:active, a:visited {
+	color: var(--link-color);
+}
+.underlined {
+	text-decoration: underline;
+	text-decoration-color: var(--border-color);
+}
+.divider {
+	position: relative;
+	width: var(--div-width);
+	height: var(--border-size);
+	border-radius: var(--border-size);
+	background: var(--border-color); /* linear-gradient(to right, var(--border-color) 0%, transparent 100%) */
+}
+.title {
+	position: relative;
+	text-align: center;
+	font-size: xx-large;
+}
+.section {
+	position: relative;
+	margin: var(--border-size);
+	width: var(--div-width);
+	height: auto;
+	border-radius: var(--border-size);
+}
+.blog-post {
+	position: relative;
+	padding: var(--spacing-small) var(--spacing);
+	margin: var(--spacing) 0px;
+	height: auto;
+	border: var(--border-size) solid var(--border-color);
+	border-image-slice: 1;
+	border-radius: var(--border-size);
+	transition: transform 0.3s ease;
+	cursor: pointer;
+}
+.blog-post:hover {
+	transform: translateX(calc(1%));
+}
+.list {
+	position: relative;
+	text-align: left;
+	padding: var(--spacing-small);
+	display: block;
+}
+.list p {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: var(--spacing-small) 0px;
+	font-size: var(--text-size);
+	color: var(--text-color);
+}
+.list a {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: var(--spacing-small) 0px;
+	font-size: var(--text-size);
+	color: var(--link-color);
+}
+.footer {
+	position: relative;
+	padding: var(--spacing);
+	text-align: center;
+}
+.footer-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing);
+}
+.footer .social-links a, .footer .social-links a:hover, .footer .social-links a:active, .footer .social-links a:visited {
+	position: relative;
+	padding: var(--spacing-small);
+	font-size: var(--text-size-small);
+	color: var(--link-color);
+}
+.footer .copyright {
+	position: relative;
+	font-size: var(--text-size-small);
+	color: var(--text-color);
+}
