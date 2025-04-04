@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="../resources/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pratix</title>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../layout.css">
+</head>
+<body>
+	
+	<div class="title">
+		<h1>Parsing in C*</h1>
+		<h5>My compiler, C*, has just gotten a rudimentary parser!</h5>
+	</div>
+	
+	<div class="divider"></div>
+	
+	<div class="section">
+		<p>
+			Over the course of about a month, I've been planning and working on a parser for my C-like language, C*. For those of you who want to know more about C*, it is a language which intends
+			to modernize C, improving upon its issues that it has accumulated over time. It intends to remove old and outdated features like "typedef" and "using" and replace them with more modern
+			features like "namespace" and "using". I've been quite busy on it, and I've finally managed to get something rudimentary in place!
+		</p>
+	</div>
+	
+	<div class="divider"></div>
+	
+	<div class="section">
+		<p>
+			The parser works on recursive descent, meaning it recursively calls itself to parse the next token in the stream. It starts from the highest-level constructs like functions and declarations,
+			and works down to the lowest-level constructs like expressions and literals. This is pretty typical of any parser. It unfortunately lacks anything more than basic function and variable recognition,
+			and it can't even perform arithmetic yet. Regardless, it is a start, and that's what I'm happy about.
+		</p>
+		
+		<img src="parsing-in-c-star_resources/func_var_parser.png" alt="Function and Variable Recognition" style="width: 100%; max-width: 800px;">
+		
+		<p>
+			One of the biggest issues I believe I will be facing with C* is going to be error handling. Errors in programming languages are everywhere, and just one minor mess-up can completely
+			break the compiler. It's mainly in the form of segmentation faults and tokens becoming misplaced, so it'll surely take me some time to get to a point where it is a functional parser.
+			Once parsing is finished, everything is smooth sailing from there. I can move onto IR generation, which should hopefully be a lot simpler than the hellscape that is trying to manage
+			1000 edge cases per statement. It is not by any means fun, but if I want something up and functioning, I must do it.
+		</p>
+		
+		<p>
+			For the time being, I believe I'll skip out on the error handling and just get the parser up and running. I can always come back to it later, and I don't want to spend time on it when
+			the compiler just needs to be functional. Error handling is complex, and I think I'd like to handle that at a later date. I'm currently satisfied with the concept of simply getting a
+			functional parser and then handling errors later, as I really just want to have a functional program which turns my code into a functioning executable. Regardless, I am happy with the
+			progress so far and hope to get past this part within the next few months.
+		</p>
+		
+		<p>
+			For anyone curious to check C* out, the repo can either be found on my <a href="https://github.com/Pratixx" target="_blank">GitHub</a> or directly through
+			<a href="https://github.com/Pratixx/csrcompiler" target="_blank">here</a>. It is open-source, and if you'd like to contribute, feel free to fork the repo and
+			make a pull request. I'd be delighted to see what other people decide to do to improve upon my compiler.
+		</p>
+		
+	</div>
+	
+	<div class="divider"></div>
+	
+	<footer class="footer">
+		<div class="footer-content">
+			<a href="../index.html" target="_self">Back to landing page</a>
+			<div class="social-links">
+				<a href="https://www.youtube.com/@ItzPratix" target="_blank"><img src="../resources/youtube.png" alt="YouTube" style="width: 48px; padding: 5px 0px"></a>
+				<a href="https://github.com/Pratixx" target="_blank"><img src="../resources/github.png" alt="GitHub" style="width: 48px; padding: 5px 0px"></a>
+			</div>
+			<div class="copyright">
+				&copy; <span id="year"></span> pratixx.github.io. All Rights Reserved.
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+	
+</body>
+</html>
